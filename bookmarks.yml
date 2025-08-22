@@ -1,0 +1,208 @@
+- category: cflmy.com 
+  icon: fa-align-justify
+  items: 
+    - name: 主站
+      link: https://www.cflmy.com 
+      description: CFLMY-创明笔记
+      image: /img/logo.webp 
+
+- category: cflmy.cn 
+  icon: fa-align-left
+  items:
+    - name: 中国境内个人主页
+      link: https://www.cflmy.cn 
+      description: My Personal Page
+      image: /img/logo.webp 
+    - name: Vercel博客
+      link: https://blog.cflmy.cn 
+      description: Hexo框架下的个人博客(已经停止维护)
+      image: /img/logo.webp 
+    - name: Alist云盘
+      link: https://Alist.cflmy.cn 
+      description: Alist云盘
+      image: /img/logo.webp 
+    - name: Hexo博客
+      link: https://hexo.cflmy.cn
+      description: Hexo框架下的个人博客,国内无评论镜像加速站(已经停止维护)
+      image: /img/logo.webp 
+    - name: CFLMY-PPT-Web工具
+      link: https://ppt.cflmy.cn 
+      description: 作者开发的Markdown转Web PPT工具
+      image: /img/logo.webp
+
+- category: cflmy.top
+  icon: fa-align-right
+  items:
+    - name: Github Page 导航页
+      link: https://www.cflmy.top 
+      description: cflmy.top页面均部署在Github页面，国内可能无法访问
+      image: /img/logo.webp 
+    - name: Mkdocs博客
+      link: https://mkdocs.cflmy.top 
+      description: 使用mkdocs工具部署的个人博客，github托管页。
+      image: /img/logo.webp
+
+- category: 中国科学技术大学
+  icon: fa-bank # 分类的图标，使用 FontAwesome 图标
+  items:
+    - name: 主站
+      link: https://www.ustc.edu.cn/ # 从 url 改为 link
+      description: 中国科学技术大学主站
+      image: https://www.faviconextractor.com/favicon/www.ustc.edu.cn # 从 icon 改为 image，用于显示网站图标
+    - name: 导航
+      link: https://ustc.life/
+      description: 中国科学技术大学导航
+      image: https://www.faviconextractor.com/favicon/ustc.life
+    - name: 青春科大
+      link: https://young.ustc.edu.cn/
+      description: 中国科学技术大学二课
+      image: https://www.faviconextractor.com/favicon/young.ustc.edu.cn 
+    - name: BB平台
+      link: https://www.bb.ustc.edu.cn/
+      description: 中国科学技术大学网上教学平台
+      image: https://www.faviconextractor.com/favicon/www.bb.ustc.edu.cn 
+    - name: 瀚海教学网
+      link: https://course.ustc.edu.cn/portal
+      description: 中国科学技术大学瀚海教学网
+      image: https://www.faviconextractor.com/favicon/course.ustc.edu.cn
+    - name: 邮件
+      link: https://email.ustc.edu.cn/
+      description: 中国科学技术大学邮件
+      image: https://www.faviconextractor.com/favicon/email.ustc.edu.cn
+    - name: WebVPN
+      link: https://wvpn.ustc.edu.cn/
+      description: 中国科学技术大学内网资源访问
+      image: https://www.faviconextractor.com/favicon/wvpn.ustc.edu.cn
+    - name: Vlab 实验中心
+      link: https://vlab.ustc.edu.cn/
+      description: 中国科学技术大学Vlab实验中心
+      image: https://www.faviconextractor.com/favicon/vlab.ustc.edu.cn
+
+ 
+- category: 工具
+  icon: fa-tools # 工具分类的图标
+  items:
+    - name: I Love PDF
+      link: https://www.ilovepdf.com/zh-cn # 书签链接地址
+      description: PDF处理
+      image: https://www.faviconextractor.com/favicon/www.ilovepdf.com 
+    - name: PDF工具
+      link: https://tools.pdf24.org/zh/all-tools # 书签链接地址
+      description: PDF工具
+      image: https://www.faviconextractor.com/favicon/tools.pdf24.org
+    - name: Finite State Machine Designer
+      link: https://madebyevan.com/fsm/
+      description: 状态图绘制
+      image: https://www.faviconextractor.com/favicon/madebyevan.com
+    - name: PHOTOKIT
+      link: https://photokit.com/
+      description: 图片编辑工具
+      image: https://www.faviconextractor.com/favicon/photokit.com
+    - name: 第一PPT
+      link: https://www.1ppt.com/
+      description: PPT模板下载
+      image: https://www.faviconextractor.com/favicon/www.1ppt.com
+    - name: Aa字库
+      link: https://www.aafont.com.cn/
+      description: 免费字体下载(该网站采用不安全链接，没有https访问，这里为了保证本网站安全性添加上了。)
+      image: https://www.faviconextractor.com/favicon/www.aafont.com.cn
+    - name: 超级辩手
+      link: https://www.cbtimer.com/
+      description: 辩论计时工具
+      image: https://www.faviconextractor.com/favicon/www.cbtimer.com
+    - name: 修理手册
+      link: https://zh.ifixit.com/
+      description: 什么都能修
+      image: https://www.faviconextractor.com/favicon/zh.ifixit.com
+    - name: 文件格式转换
+      link: https://cdkm.com/cn/#google_vignette
+      description: 这个转换真的很有用
+      image: https://www.faviconextractor.com/favicon/cdkm.com
+
+- category: 官方文档
+  icon: fa-book # 分类的图标，使用 FontAwesome 图标
+  items:
+    - name: C/C++参考手册
+      link: https://zh.cppreference.com/
+      description: C/C++参考手册
+      image: https://www.faviconextractor.com/favicon/zh.cppreference.com
+    - name: Markdown参考手册
+      link: https://markdown.com.cn/
+      description: Markdown参考手册
+      image: https://www.faviconextractor.com/favicon/markdown.com.cn
+    - name: Typst参考手册
+      link: https://typst.app/docs/
+      description: Typst参考手册
+      image: https://www.faviconextractor.com/favicon/typst.app
+    - name: Python官方页面
+      link: https://www.python.org/
+      description: Python官方页面
+      image: https://www.faviconextractor.com/favicon/www.python.org
+    - name: Pytorch官方页面
+      link: https://pytorch.org/
+      description: Pytorch官方页面
+      image: https://www.faviconextractor.com/favicon/pytorch.org
+    - name: matplotlib官方页面
+      link: https://matplotlib.net/stable/index.html
+      description: matplotlib官方页面
+      image: https://www.faviconextractor.com/favicon/matplotlib.net
+
+- category: 课程主页
+  icon: fa-edit # 分类的图标，使用 FontAwesome 图标
+  items:
+    - name: 计算机系统结构系列实验课程根主页
+      link: https://soc.ustc.edu.cn/
+      description: 计算机系统结构系列实验课程
+      image: https://www.faviconextractor.com/favicon/soc.ustc.edu.cn
+    - name: 编译原理
+      link: https://ustc-compiler-2025.github.io/homepage/
+      description: 编译原理实验界面
+      image: https://www.faviconextractor.com/favicon/ustc-compiler-2025.github.io
+    - name: 算法基础
+      link: https://2024-ustc-algorithm.github.io/
+      description: 算法基础实验界面
+      image: https://www.faviconextractor.com/favicon/2024-ustc-algorithm.github.io
+    - name: 人工智能基础
+      link: https://staff.ustc.edu.cn/~jianmin/2025/ai2025/
+      description: 人工智能基础课程主页(该网站采用不安全链接，没有https访问，这里为了保证本网站安全性添加上了。)
+      image: https://www.faviconextractor.com/favicon/staff.ustc.edu.cn
+    - name: Database Systems and Applications
+      link: https://kdelab.ustc.edu.cn/~jpq/courses/db.html
+      description:  数据库系统及应用课程主页
+      image: https://www.faviconextractor.com/favicon/kdelab.ustc.edu.cn
+
+- category: AI
+  icon: fa-code # 分类的图标，使用 FontAwesome 图标
+  items: 
+    - name: Deep Seek
+      link: https://chat.deepseek.com/
+      description: Deep Seek
+      image: https://www.faviconextractor.com/favicon/chat.deepseek.com
+    - name: ChatGPT
+      link: https://chatgpt.com/
+      description: ChatGPT
+      image: https://www.faviconextractor.com/favicon/chatgpt.com
+    - name: 讯飞星火
+      link: https://xinghuo.xfyun.cn/
+      description: 讯飞星火
+      image: https://www.faviconextractor.com/favicon/xinghuo.xfyun.cn
+
+- category: 云服务
+  icon: fa-cloud # 分类的图标，使用 FontAwesome 图标
+  items:
+    - name: 阿里云
+      link: https://account.aliyun.com/
+      description: 阿里云控制台登录页
+      image: https://www.faviconextractor.com/favicon/account.aliyun.com
+    - name: Vercel
+      link: https://vercel.com/
+      description: Vercel
+      image: https://www.faviconextractor.com/favicon/vercel.com
+    - name: Netlify
+      link: https://app.netlify.com/
+      description: Netlify
+      image: https://www.faviconextractor.com/favicon/app.netlify.com
+    - name: Google Colab
+      link: https://colab.research.google.com/
+      description: Python机器学习云环境
+      image: https://www.faviconextractor.com/favicon/colab.research.google.com
