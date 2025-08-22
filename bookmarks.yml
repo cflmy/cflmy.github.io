@@ -13,10 +13,6 @@
       link: https://www.cflmy.cn 
       description: My Personal Page
       image: /img/logo.webp 
-    - name: Vercel博客
-      link: https://blog.cflmy.cn 
-      description: Hexo框架下的个人博客(已经停止维护)
-      image: /img/logo.webp 
     - name: Alist云盘
       link: https://Alist.cflmy.cn 
       description: Alist云盘
@@ -41,6 +37,10 @@
       link: https://mkdocs.cflmy.top 
       description: 使用mkdocs工具部署的个人博客，github托管页。
       image: /img/logo.webp
+    - name: Hexo-Vercel博客
+      link: https://hexo.cflmy.top 
+      description: Hexo框架下的个人博客(已经停止维护)，Vercel托管页
+      image: /img/logo.webp 
 
 - category: 中国科学技术大学
   icon: fa-bank # 分类的图标，使用 FontAwesome 图标
