@@ -26,7 +26,7 @@ onMounted(() => {
 <style scoped>
 .footer {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   background-color: var(--card-background);
   border-top: 1px solid var(--border-color);
   display: flex;

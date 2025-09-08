@@ -51,7 +51,7 @@ onMounted(() => {
       <div class="section">
         <Contact />
       </div>
-      <div class="section">
+      <div class="section section-half">
         <Footer />
       </div>
     </div>
@@ -97,6 +97,20 @@ body {
 /* 适配页面的样式 - 确保内容可见 */
 .section {
   height: 100vh;
+  scroll-snap-align: start;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  background-color: var(--background-color);
+}
+
+/* 半页高度的section样式，用于Footer组件 */
+.section-half {
+  height: 50vh;
   scroll-snap-align: start;
   text-align: center;
   font-size: 30px;
