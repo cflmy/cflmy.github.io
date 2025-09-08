@@ -10,4 +10,5 @@ pnpm create vite@latest
 pnpm install
 pnpm run dev
 pnpm dev --host|cat
+pnpm dev --host --debug
 ```

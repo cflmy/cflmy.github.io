@@ -100,29 +100,6 @@ onMounted(() => {
   padding: 0 1.5rem;
 }
 
-.section {
-  padding: var(--section-padding);
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  text-align: center;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: var(--primary-color);
-  border-radius: 2px;
-}
-
 .btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
@@ -144,7 +121,12 @@ onMounted(() => {
 
 /* 联系方式区域样式 */
 .contact {
+  width: 100%;
+  height: 100vh;
   background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-content {

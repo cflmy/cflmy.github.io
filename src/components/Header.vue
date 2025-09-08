@@ -57,13 +57,14 @@ onMounted(() => {
 <style scoped>
 /* 英雄区域样式 */
 .hero {
+  width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background-color: var(--background-color);
   position: relative;
-  overflow: hidden;
+  opacity: 0;
 }
 
 .hero-content {

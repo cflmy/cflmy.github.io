@@ -14,6 +14,9 @@ importers:
       vue:
         specifier: ^3.5.18
         version: 3.5.21(typescript@5.8.3)
+      vue-fullpage.js:
+        specifier: ^0.2.22
+        version: 0.2.22(vue@3.5.21(typescript@5.8.3))
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^6.0.1
@@ -516,6 +519,9 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
+  fullpage.js@4.0.37:
+    resolution: {integrity: sha512-wrGSdwlriCuDwHtNogsv5B4/utZIWapjhN+UA7xz0teM4u481ZZ5A9EaM9weMfTR5AVzGKdFf6CG/pjqa32D5Q==}
+
   giget@2.0.0:
     resolution: {integrity: sha512-L5bGsVkxJbJgdnwyuheIunkGatUF/zssUoxxjACCseZYAVbaqdh9Tsmmlkl8vYan09H7sbvKt4pS8GqKLBrEzA==}
     hasBin: true
@@ -718,6 +724,11 @@ packages:
 
   vscode-uri@3.1.0:
     resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
+
+  vue-fullpage.js@0.2.22:
+    resolution: {integrity: sha512-c5L+aFfRnOsP7XDWZrf+aipU+r7VUj0cTXX3Wzli/2biFZbEztOjOOh/Yf7QFxHVyUFt1k6giXr99HS5l4Z4aQ==}
+    peerDependencies:
+      vue: ^3.2.26
 
   vue-tsc@3.0.6:
     resolution: {integrity: sha512-Tbs8Whd43R2e2nxez4WXPvvdjGbW24rOSgRhLOHXzWiT4pcP4G7KeWh0YCn18rF4bVwv7tggLLZ6MJnO6jXPBg==}
@@ -1182,6 +1193,8 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
+  fullpage.js@4.0.37: {}
+
   giget@2.0.0:
     dependencies:
       citty: 0.1.6
@@ -1425,6 +1438,11 @@ snapshots:
       jiti: 2.5.1
 
   vscode-uri@3.1.0: {}
+
+  vue-fullpage.js@0.2.22(vue@3.5.21(typescript@5.8.3)):
+    dependencies:
+      fullpage.js: 4.0.37
+      vue: 3.5.21(typescript@5.8.3)
 
   vue-tsc@3.0.6(typescript@5.8.3):
     dependencies:
