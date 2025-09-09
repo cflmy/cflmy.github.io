@@ -281,7 +281,7 @@ watch(displayedTexts, () => {
       ref.style.transform = 'translateX(0)'
     }
   })
-})</script>
+});</script>
 
 <template>
   <!-- 关于我区域 -->
