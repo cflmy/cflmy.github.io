@@ -430,6 +430,12 @@ watch(displayedTexts, () => {
   position: relative;
   font-weight: 500;
   overflow: hidden;
+  /* 根据容器大小自动调整字体大小 */
+  font-size: clamp(0.8rem, 4vw, 1.1rem);
+  /* 确保文本不会换行 */
+  white-space: nowrap;
+  /* 溢出时显示省略号作为后备方案 */
+  text-overflow: ellipsis;
 }
 
 /* 技能项悬停发光效果 */
@@ -478,7 +484,7 @@ watch(displayedTexts, () => {
   
   .skill-item {
     padding: 1rem;
-    font-size: 0.9rem;
+    font-size: clamp(0.7rem, 3.5vw, 0.9rem);
   }
 }
 </style>;
