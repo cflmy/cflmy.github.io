@@ -222,6 +222,15 @@ function handleTechBadgeLeave(event: MouseEvent) {
   badge.style.boxShadow = 'none'
 }
 
+// 打开项目链接
+function openProjectLink(projectTitle: string) {
+  if (projectTitle === 'CFLMY-创明笔记') {
+    window.open('https://www.cflmy.com', '_blank')
+  } else {
+    window.open('https://mkdocs.cflmy.cn', '_blank')
+  }
+}
+
 // 检查元素是否在视口中
 function checkInView() {
   if (!projectsRef.value) return
@@ -334,6 +343,8 @@ onMounted(() => {
           class="project-card"
           @mouseenter="handleProjectHover($event)"
           @mouseleave="handleProjectLeave($event)"
+          @click="openProjectLink(project.title)"
+          style="cursor: pointer;"
         >
           <div class="project-image">
             <img :src="project.image" :alt="project.title" />
@@ -359,7 +370,7 @@ onMounted(() => {
                 {{ tech }}
               </span>
             </div>
-            <button class="btn btn-sm project-button" @mouseenter="handleButtonHover" @mouseleave="handleButtonLeave">查看详情</button>
+            <button class="btn btn-sm project-button" @mouseenter="handleButtonHover" @mouseleave="handleButtonLeave" @click.stop="openProjectLink(project.title)">查看详情</button>
           </div>
         </div>
       </div>
