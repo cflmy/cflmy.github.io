@@ -306,7 +306,7 @@ onMounted(() => {
   // 初始检查 - 直接触发动画，确保内容总是可见
   isInView.value = true;
   triggerAnimations();
-})</script>
+});</script>
 
 <template>
   <!-- 项目展示区域 -->
@@ -323,7 +323,10 @@ onMounted(() => {
         <span class="title-text">我的作品</span>
         <span class="title-decoration"></span>
       </h2>
-      <div class="projects-grid">
+      <div class="projects-grid" :class="{
+        'projects-grid-two': personalInfo.projects.length === 2,
+        'projects-grid-multi': personalInfo.projects.length > 2
+      }">
         <div 
           v-for="(project, index) in personalInfo.projects" 
           :key="project.title"
@@ -481,9 +484,24 @@ onMounted(() => {
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 3rem;
   perspective: 1000px;
+  justify-items: center;
 }
 
-/* 项目卡片样式 */
+/* 两个项目时的布局 - 调整间隙确保对称 */
+.projects-grid-two {
+  grid-template-columns: repeat(2, 350px);
+  gap: 4rem; /* 通过控制间隙调整布局 */
+  justify-content: center;
+}
+
+/* 三个以上项目时的布局 - 紧凑间隙 */
+.projects-grid-multi {
+  gap: 2rem; /* 更紧凑的间隙 */
+  grid-template-columns: repeat(auto-fill, 350px);
+  justify-content: center;
+}
+
+/* 项目卡片样式 - 固定大小确保一致性 */
 .project-card {
   background-color: var(--background-color);
   border-radius: 12px;
@@ -494,6 +512,9 @@ onMounted(() => {
   transform-style: preserve-3d;
   backface-visibility: hidden;
   cursor: pointer;
+  width: 350px; /* 固定宽度确保所有项目大小一致 */
+  display: flex;
+  flex-direction: column;
 }
 
 /* 项目图片区域 */
@@ -550,6 +571,9 @@ onMounted(() => {
   padding: 2rem;
   position: relative;
   z-index: 2;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-title {
@@ -558,6 +582,7 @@ onMounted(() => {
   color: white;
   font-weight: 600;
   transition: transform 0.3s ease;
+  min-height: 3rem;
 }
 
 .project-card:hover .project-title {
@@ -569,6 +594,7 @@ onMounted(() => {
   color: var(--text-secondary);
   line-height: 1.7;
   font-size: 0.95rem;
+  flex-grow: 1;
 }
 
 /* 技术标签样式 */
@@ -643,8 +669,21 @@ onMounted(() => {
     margin-bottom: 2.5rem;
   }
   
-  .projects-grid {
+  /* 响应式网格布局 - 确保在小屏幕上保持对称性 */
+  .projects-grid,
+  .projects-grid-two,
+  .projects-grid-multi {
+    grid-template-columns: 1fr;
     gap: 2rem;
+    justify-content: center;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  /* 在小屏幕上保持固定大小 */
+  .project-card {
+    width: 100%;
+    max-width: 350px;
   }
   
   .project-image {
