@@ -120,34 +120,18 @@ function createGeometricBackground() {
   animate()
 }
 
-// 按钮悬停动画 - 脉冲效果
+// 按钮悬停动画 - 简化效果
 function handleButtonHover(event: MouseEvent) {
   const button = event.currentTarget as HTMLElement
-  button.style.transform = 'translateY(-3px) scale(1.05)'
-  button.style.boxShadow = '0 8px 25px rgba(100, 108, 255, 0.4)'
-  button.style.transition = 'all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1)'
-  
-  // 添加脉冲效果
-  const pulse = document.createElement('span')
-  pulse.className = 'button-pulse'
-  const rect = button.getBoundingClientRect()
-  pulse.style.width = pulse.style.height = `${Math.max(rect.width, rect.height)}px`
-  pulse.style.left = `${event.clientX - rect.left - Math.max(rect.width, rect.height) / 2}px`
-  pulse.style.top = `${event.clientY - rect.top - Math.max(rect.width, rect.height) / 2}px`
-  button.appendChild(pulse)
-  
-  // 移除脉冲元素
-  setTimeout(() => {
-    if (button.contains(pulse)) {
-      button.removeChild(pulse)
-    }
-  }, 600)
+  button.style.transform = 'translateY(-2px)'
+  button.style.boxShadow = '0 6px 15px rgba(100, 108, 255, 0.3)'
+  button.style.transition = 'all 0.2s ease'
 }
 
 // 按钮离开动画
 function handleButtonLeave(event: MouseEvent) {
   const button = event.currentTarget as HTMLElement
-  button.style.transform = 'translateY(0) scale(1)'
+  button.style.transform = 'translateY(0)'
   button.style.boxShadow = '0 4px 12px rgba(100, 108, 255, 0.2)'
 }
 
@@ -332,10 +316,11 @@ onMounted(() => {
         <span class="title-text">我的作品</span>
         <span class="title-decoration"></span>
       </h2>
-      <div class="projects-grid" :class="{
-        'projects-grid-two': personalInfo.projects.length === 2,
-        'projects-grid-multi': personalInfo.projects.length > 2
-      }">
+      <div class="projects-container">
+        <div class="projects-grid" :class="{
+          'projects-grid-two': personalInfo.projects.length === 2,
+          'projects-grid-multi': personalInfo.projects.length > 2
+        }">
         <div 
           v-for="(project, index) in personalInfo.projects" 
           :key="project.title"
@@ -372,6 +357,14 @@ onMounted(() => {
             </div>
             <button class="btn btn-sm project-button" @mouseenter="handleButtonHover" @mouseleave="handleButtonLeave" @click.stop="openProjectLink(project.title)">查看详情</button>
           </div>
+        </div>
+        </div>
+        <div class="projects-nav-container">
+          <a href="https://guide.cflmy.cn" target="_blank" class="projects-nav-button" @mouseenter="handleButtonHover($event)" @mouseleave="handleButtonLeave($event)" title="作者作品全导航">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12h18M18 12l-5-5M18 12l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -487,6 +480,65 @@ onMounted(() => {
   background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
   border-radius: 0.25rem;
   z-index: 1;
+}
+
+/* 项目容器 - 包含网格和导航按钮 */
+.projects-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  position: relative;
+  width: 100%;
+}
+
+/* 导航按钮容器 */
+.projects-nav-container {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* 作者作品全导航按钮 */
+.projects-nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 80px;
+  min-height: 80px;
+  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.3);
+  user-select: none;
+}
+
+/* 按钮悬停效果 */
+.projects-nav-button:hover {
+  background-color: var(--primary-hover);
+  transform: translateX(3px);
+  box-shadow: 0 6px 15px rgba(100, 108, 255, 0.4);
+}
+
+/* 按钮内图标样式 */
+.projects-nav-button svg {
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+  width: 24px;
+  height: 24px;
+}
+
+/* 按钮悬停时图标旋转效果 */
+.projects-nav-button:hover svg {
+  transform: rotate(0deg) scale(1.05);
 }
 
 /* 项目网格 */
@@ -678,6 +730,38 @@ onMounted(() => {
   .projects-title {
     font-size: 2rem;
     margin-bottom: 2.5rem;
+  }
+  
+  /* 响应式项目容器 - 小屏幕垂直布局 */
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: static;
+  }
+  
+  /* 响应式导航按钮容器 */
+  .projects-nav-container {
+    margin-top: 0;
+    width: 100%;
+    max-width: 350px;
+    position: static;
+    justify-content: center;
+  }
+  
+  /* 响应式作者作品全导航按钮 */
+  .projects-nav-button {
+    min-width: auto;
+    width: 100%;
+    max-width: 350px;
+    padding: 1.3rem;
+    min-height: 70px;
+  }
+  
+  /* 响应式按钮内图标 */
+  .projects-nav-button svg {
+    width: 20px;
+    height: 20px;
   }
   
   /* 响应式网格布局 - 确保在小屏幕上保持对称性 */
