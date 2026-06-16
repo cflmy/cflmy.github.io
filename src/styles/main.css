@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-wind: #64ffda;
+  --color-cloud: #c084fc;
+  --color-bg: #080c14;
+  --color-surface: #0f1520;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --font-sans: 'Noto Sans SC', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: #e2e8f0;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: rgba(100, 255, 218, 0.2);
+}
+
+.tool-textarea {
+  width: 100%;
+  min-height: 160px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: rgba(0, 0, 0, 0.35);
+  color: #e2e8f0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.tool-textarea:focus {
+  border-color: rgba(100, 255, 218, 0.45);
+}
+
+.tool-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: rgba(0, 0, 0, 0.35);
+  color: #e2e8f0;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.tool-input:focus {
+  border-color: rgba(100, 255, 218, 0.45);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: #cbd5e1;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn:hover {
+  background: rgba(100, 255, 218, 0.08);
+  border-color: rgba(100, 255, 218, 0.3);
+}
+
+.btn-primary {
+  border-color: rgba(100, 255, 218, 0.4);
+  color: var(--color-wind);
+}
+
+.btn-sm {
+  padding: 5px 12px;
+  font-size: 0.8rem;
+}
+
+.err-msg {
+  color: #f87171;
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+}
+
+.ok-msg {
+  color: var(--color-wind);
+  font-size: 0.85rem;
+}
