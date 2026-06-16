@@ -29,19 +29,42 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineAsyncComponent } from 'vue';
+import { computed, defineAsyncComponent, type Component } from 'vue';
 import { useRoute } from 'vue-router';
 import AppLayout from '@/layouts/AppLayout.vue';
+import ToolLoadError from '@/components/ToolLoadError.vue';
 import { getTool } from '@/data/tools';
 
 const route = useRoute();
 const id = computed(() => route.params.id as string);
 const meta = computed(() => getTool(id.value));
 
+const asyncCache = new Map<string, Component>();
+
+function resolveToolComponent(toolId: string, loader: () => Promise<{ default: Component }>) {
+  const cached = asyncCache.get(toolId);
+  if (cached) return cached;
+
+  const comp = defineAsyncComponent({
+    loader,
+    delay: 120,
+    timeout: 60_000,
+    errorComponent: ToolLoadError,
+    onError(err, retry, fail, attempts) {
+      console.error(`[tool:${toolId}] load failed`, err);
+      if (attempts <= 2) retry();
+      else fail();
+    },
+  });
+
+  asyncCache.set(toolId, comp);
+  return comp;
+}
+
 const ToolComp = computed(() => {
   const m = meta.value;
   if (!m) return null;
-  return defineAsyncComponent(m.component);
+  return resolveToolComponent(m.id, m.component);
 });
 </script>
 

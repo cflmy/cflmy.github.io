@@ -30,6 +30,8 @@ pnpm dev
 
 Gitee Pages / GitHub Pages 请绑定 **`public` 分支** 作为发布源，根目录即站点文件。自定义域名在 `public/CNAME` 中配置（构建时会复制到发布包）。
 
+若域名经过 **Cloudflare** 代理，请在「速度 → 优化」中**关闭 Rocket Loader**，否则二维码、Word 排版等按需加载的工具可能无法运行（项目已在 HTML 中加入兼容标记，但仍建议关闭）。
+
 ### 本地发布
 
 ```bash
