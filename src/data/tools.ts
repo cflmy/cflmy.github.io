@@ -6,7 +6,6 @@ export interface ToolMeta {
   desc: string;
   icon: string;
   category: ToolCategory;
-  component: () => Promise<{ default: import('vue').Component }>;
 }
 
 export const CATEGORIES: Record<ToolCategory, string> = {
@@ -20,7 +19,6 @@ export const tools: ToolMeta[] = [
     desc: '将链接或文本转为二维码，可下载',
     icon: '▣',
     category: 'utility',
-    component: () => import('@/tools/QrTool.vue'),
   },
   {
     id: 'image-compress',
@@ -28,7 +26,6 @@ export const tools: ToolMeta[] = [
     desc: '本地压缩图片，可调质量与尺寸',
     icon: '🖼',
     category: 'utility',
-    component: () => import('@/tools/ImageCompressTool.vue'),
   },
   {
     id: 'word-format',
@@ -36,7 +33,6 @@ export const tools: ToolMeta[] = [
     desc: '上传 docx，一键套用论文/公文格式',
     icon: 'W',
     category: 'utility',
-    component: () => import('@/tools/WordFormatTool.vue'),
   },
   {
     id: 'resume',
@@ -44,7 +40,6 @@ export const tools: ToolMeta[] = [
     desc: '填写信息生成简历，导出 Word / PDF',
     icon: 'CV',
     category: 'utility',
-    component: () => import('@/tools/ResumeTool.vue'),
   },
 ];
 

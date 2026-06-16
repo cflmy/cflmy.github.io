@@ -12,12 +12,8 @@
       </header>
 
       <div class="tool-body">
-        <Suspense>
-          <component :is="ToolComp" />
-          <template #fallback>
-            <p class="loading">加载中…</p>
-          </template>
-        </Suspense>
+        <component :is="ToolComp" v-if="ToolComp" />
+        <p v-else class="not-found">该工具组件未注册</p>
       </div>
     </template>
 
@@ -29,42 +25,20 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineAsyncComponent, type Component } from 'vue';
+import { computed, type Component } from 'vue';
 import { useRoute } from 'vue-router';
 import AppLayout from '@/layouts/AppLayout.vue';
-import ToolLoadError from '@/components/ToolLoadError.vue';
 import { getTool } from '@/data/tools';
+import { TOOL_COMPONENTS } from '@/tools/registry';
 
 const route = useRoute();
 const id = computed(() => route.params.id as string);
 const meta = computed(() => getTool(id.value));
 
-const asyncCache = new Map<string, Component>();
-
-function resolveToolComponent(toolId: string, loader: () => Promise<{ default: Component }>) {
-  const cached = asyncCache.get(toolId);
-  if (cached) return cached;
-
-  const comp = defineAsyncComponent({
-    loader,
-    delay: 120,
-    timeout: 60_000,
-    errorComponent: ToolLoadError,
-    onError(err, retry, fail, attempts) {
-      console.error(`[tool:${toolId}] load failed`, err);
-      if (attempts <= 2) retry();
-      else fail();
-    },
-  });
-
-  asyncCache.set(toolId, comp);
-  return comp;
-}
-
-const ToolComp = computed(() => {
+const ToolComp = computed((): Component | null => {
   const m = meta.value;
   if (!m) return null;
-  return resolveToolComponent(m.id, m.component);
+  return TOOL_COMPONENTS[m.id] ?? null;
 });
 </script>
 
@@ -118,13 +92,9 @@ const ToolComp = computed(() => {
   padding: 8px 0;
 }
 
-.loading,
 .not-found {
   color: #64748b;
   padding: 40px 0;
-}
-
-.not-found {
   text-align: center;
 }
 </style>
