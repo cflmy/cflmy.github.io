@@ -27,7 +27,8 @@ async function copy() {
 
 <style scoped>
 .copied {
-  border-color: rgba(100, 255, 218, 0.5);
+  border-color: var(--color-border-strong);
   color: var(--color-wind);
+  background: rgba(14, 165, 233, 0.08);
 }
 </style>

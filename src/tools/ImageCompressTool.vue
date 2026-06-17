@@ -187,8 +187,8 @@ onUnmounted(revokeUrls);
 }
 
 .upload:hover {
-  border-color: rgba(100, 255, 218, 0.4);
-  background: rgba(100, 255, 218, 0.04);
+  border-color: var(--color-border-strong);
+  background: rgba(14, 165, 233, 0.04);
 }
 
 .file-input {
@@ -240,9 +240,9 @@ onUnmounted(revokeUrls);
   max-width: 100%;
   max-height: 280px;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid var(--color-border);
-  background: rgba(0, 0, 0, 0.2);
+  background: #f8fafc;
 }
 
 .meta {

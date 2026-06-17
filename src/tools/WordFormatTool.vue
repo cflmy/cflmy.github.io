@@ -220,8 +220,8 @@ async function process() {
 }
 
 .upload:hover {
-  border-color: rgba(100, 255, 218, 0.4);
-  background: rgba(100, 255, 218, 0.04);
+  border-color: var(--color-border-strong);
+  background: rgba(14, 165, 233, 0.04);
 }
 
 .file-input {
@@ -256,9 +256,9 @@ async function process() {
 }
 
 .preset-btn.active {
-  border-color: rgba(100, 255, 218, 0.45);
+  border-color: var(--color-border-strong);
   color: var(--color-wind);
-  background: rgba(100, 255, 218, 0.08);
+  background: rgba(14, 165, 233, 0.08);
 }
 
 .custom-grid {
@@ -293,11 +293,11 @@ async function process() {
 
 .summary {
   padding: 12px 14px;
-  border-radius: 8px;
-  background: rgba(100, 255, 218, 0.06);
-  border: 1px solid rgba(100, 255, 218, 0.15);
+  border-radius: 10px;
+  background: rgba(14, 165, 233, 0.06);
+  border: 1px solid rgba(14, 165, 233, 0.12);
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: var(--color-muted);
 }
 
 .summary p {

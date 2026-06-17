@@ -319,9 +319,10 @@ async function exportPdf() {
   flex-direction: column;
   gap: 8px;
   margin-bottom: 12px;
-  padding: 12px;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.2);
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(14, 165, 233, 0.04);
+  border: 1px solid var(--color-border);
 }
 
 .remove {
@@ -350,15 +351,16 @@ async function exportPdf() {
 .preview-scroll {
   overflow: auto;
   max-height: calc(100vh - 120px);
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid var(--color-border);
-  background: #1e293b;
+  background: #f1f5f9;
   padding: 16px;
+  box-shadow: var(--shadow-sm);
 }
 
 .preview-scroll :deep(.tpl) {
   margin: 0 auto;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-lg);
 }
 
 .template-picker {
@@ -389,21 +391,23 @@ async function exportPdf() {
   align-items: flex-start;
   gap: 4px;
   padding: 10px 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 2px solid var(--color-border);
-  background: rgba(0, 0, 0, 0.15);
+  background: var(--color-surface);
   text-align: left;
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
 }
 
 .template-card:hover {
-  border-color: #475569;
+  border-color: rgba(14, 165, 233, 0.3);
+  box-shadow: var(--shadow-sm);
 }
 
 .template-card.active {
-  border-color: #3b82f6;
-  background: rgba(59, 130, 246, 0.1);
+  border-color: var(--color-wind);
+  background: rgba(14, 165, 233, 0.06);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
 }
 
 .template-swatch {
@@ -433,12 +437,12 @@ async function exportPdf() {
 .template-name {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #e2e8f0;
+  color: var(--color-text);
 }
 
 .template-desc {
   font-size: 0.72rem;
-  color: #94a3b8;
+  color: var(--color-muted);
   line-height: 1.3;
 }
 
@@ -456,9 +460,9 @@ async function exportPdf() {
   width: 72px;
   height: 88px;
   flex-shrink: 0;
-  border-radius: 4px;
+  border-radius: 6px;
   border: 1px solid var(--color-border);
-  background: rgba(0, 0, 0, 0.25);
+  background: #f8fafc;
   overflow: hidden;
   display: flex;
   align-items: center;

@@ -16,22 +16,25 @@ defineProps<{ title?: string; hint?: string }>();
 .tool-panel {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .panel-head {
   margin-bottom: 4px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .panel-title {
   font-size: 1rem;
   font-weight: 600;
-  color: #f1f5f9;
+  color: var(--color-text);
 }
 
 .panel-hint {
-  margin-top: 4px;
-  font-size: 0.8rem;
-  color: #64748b;
+  margin-top: 6px;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  line-height: 1.5;
 }
 </style>

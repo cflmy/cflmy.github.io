@@ -81,7 +81,7 @@ onMounted(generate);
 .opt label {
   display: block;
   font-size: 0.8rem;
-  color: #64748b;
+  color: var(--color-muted);
   margin-bottom: 6px;
 }
 
@@ -92,7 +92,7 @@ onMounted(generate);
 .opt span {
   font-size: 0.8rem;
   font-family: var(--font-mono);
-  color: #94a3b8;
+  color: var(--color-muted);
 }
 
 .qr-wrap {
@@ -100,10 +100,11 @@ onMounted(generate);
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 24px;
+  border-radius: 14px;
   border: 1px solid var(--color-border);
   background: #fff;
+  box-shadow: var(--shadow-sm);
 }
 
 .qr-wrap img {
