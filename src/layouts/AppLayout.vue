@@ -49,6 +49,14 @@ const year = new Date().getFullYear();
   flex-direction: column;
 }
 
+.layout::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #ffffff;
+}
+
 .topbar {
   display: flex;
   align-items: center;
